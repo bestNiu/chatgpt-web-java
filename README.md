@@ -5,6 +5,7 @@
 - ChatGPT 说文解字前端的 Java 后台
 - 前端-说文用户端开源代码 https://github.com/mjjh1717/chatgpt-shuowen
 - 前端-解字管理端开源代码 https://github.com/hncboy/chatgpt-jiezi
+- 2.0 升级版开发中，会接入 openai embeddings、Midjourney 等等
 
 # 注意
 
@@ -31,12 +32,14 @@
 
 # 地址
 
-- 接口文档：http://localhost:3002/swagger-ui.html
+- 接口文档：http://127.0.0.1:3002/swagger-ui/index.html
 - 用户端：
   - https://front.stargpt.top/ (失效)
   - https://front1.stargpt.top/ (失效)
-  - https://front2.stargpt.top/
+  - https://front2.stargpt.top/ (失效)
   - https://front3.stargpt.top/
+  - https://front4.stargpt.top/
+  - https://front5.stargpt.top/
 
 # 功能
 
@@ -52,7 +55,7 @@
 
 ### 敏感词过滤
 
-在项目启动时会将敏感词文件 sensitive_word_base64.txt 的数据导入到敏感词表，目前还未提供后台管理敏感词的接口，提供后这种方式可以去掉。在文件中敏感词以 base64 形式存放。并将敏感词表的数据构建到 HuTool 提供的 WordTree 类中。在发送消息调用方法判断是否属于敏感词，是的话消息发送不成功。为了兼容前端保持上下文关系，在消息内容属于敏感词的情况下会正常返回消息格式，但是带的是请求的的 conversationI 和 parentMessagId。
+在发送消息调用方法判断是否属于敏感词，是的话消息发送不成功。为了兼容前端保持上下文关系，在消息内容属于敏感词的情况下会正常返回消息格式，但是带的是请求的的 conversationId 和 parentMessagId，敏感词需要自己导入数据库。
 
 ![](pics/sensitive_word_test.png)
 
@@ -195,13 +198,13 @@
 
 # 联系方式
 
-技术交流添加微信，备注 Github ChatGPT 以及原因
+添加微信备注 Github ChatGPT 以及原因，微信群请在 [issue](https://github.com/hncboy/chatgpt-web-java/issues/77) 查看
 
 <div style="display: flex; align-items: center; gap: 20px;">
   <div style="text-align: center">
     <img style="max-width: 100%" src="pics/wechat.png" alt="微信" />
-  </div>
 </div>
+
 
 
 
